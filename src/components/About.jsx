@@ -80,17 +80,14 @@ export default function About({ c }) {
 
               {/* Card body */}
               <div style={{ padding: '20px 24px', display: 'flex', gap: '18px', alignItems: 'flex-start' }}>
-                {/* Photo placeholder */}
+                {/* Photo */}
                 <div style={{
                   width: 72, height: 90, flexShrink: 0,
                   borderRadius: '10px',
-                  background: `linear-gradient(140deg, ${c.a1}30, ${c.a2}20)`,
-                  border: '1px solid rgba(247,243,238,0.12)',
-                  display: 'flex', flexDirection: 'column',
-                  alignItems: 'center', justifyContent: 'center', gap: '4px',
+                  border: '1px solid rgba(247,243,238,0.18)',
+                  overflow: 'hidden',
                 }}>
-                  <span style={{ fontSize: '24px' }}>🧑‍💻</span>
-                  <p style={{ fontFamily: 'monospace', fontSize: '8px', color: 'rgba(247,243,238,0.2)', textAlign: 'center', lineHeight: 1.3 }}>photo</p>
+                  <img src="/photo.jpg" alt="Julia Moe" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
                 </div>
 
                 {/* Info */}

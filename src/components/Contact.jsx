@@ -124,7 +124,9 @@ export default function Contact({ c }) {
             display: 'flex', alignItems: 'center', gap: '12px',
             background: 'rgba(247,243,238,0.6)',
           }}>
-            <div style={{ width: 36, height: 36, borderRadius: '50%', background: c.a1l, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '18px' }}>🌿</div>
+            <div style={{ width: 36, height: 36, borderRadius: '50%', overflow: 'hidden', flexShrink: 0 }}>
+              <img src="/avatar.jpg" alt="verum" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
+            </div>
             <div>
               <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '14px', fontWeight: 700, color: '#1a1614', letterSpacing: '-0.02em' }}>verum</p>
               <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '11px', color: 'rgba(26,22,20,0.40)' }}>
@@ -150,7 +152,9 @@ export default function Contact({ c }) {
                 animation: 'contentIn 0.3s cubic-bezier(0.22,1,0.36,1) both',
               }}>
                 {m.from === 'julia' && (
-                  <div style={{ width: 26, height: 26, borderRadius: '50%', background: c.a1l, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', marginRight: '8px', flexShrink: 0, alignSelf: 'flex-end' }}>🌿</div>
+                  <div style={{ width: 26, height: 26, borderRadius: '50%', overflow: 'hidden', marginRight: '8px', flexShrink: 0, alignSelf: 'flex-end' }}>
+                    <img src="/avatar.jpg" alt="verum" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
+                  </div>
                 )}
                 <div style={{
                   maxWidth: '75%', padding: '10px 14px',
@@ -168,7 +172,9 @@ export default function Contact({ c }) {
             {/* Typing indicator */}
             {typing && (
               <div style={{ display: 'flex', alignItems: 'flex-end', gap: '8px', animation: 'contentIn 0.3s both' }}>
-                <div style={{ width: 26, height: 26, borderRadius: '50%', background: c.a1l, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', flexShrink: 0 }}>🌿</div>
+                <div style={{ width: 26, height: 26, borderRadius: '50%', overflow: 'hidden', flexShrink: 0 }}>
+                  <img src="/avatar.jpg" alt="verum" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
+                </div>
                 <div style={{ padding: '10px 16px', borderRadius: '18px 18px 18px 4px', background: 'rgba(26,22,20,0.06)', display: 'flex', gap: '4px', alignItems: 'center' }}>
                   {[0, 1, 2].map((i) => (
                     <div key={i} style={{ width: 6, height: 6, borderRadius: '50%', background: 'rgba(26,22,20,0.3)', animation: `bop 0.9s ${i * 0.15}s ease-in-out infinite` }} />

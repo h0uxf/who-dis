@@ -1,0 +1,101 @@
+export const MOODS = {
+  amber: {
+    a1: 'oklch(78% 0.15 82)',
+    a2: 'oklch(70% 0.13 25)',
+    a3: 'oklch(65% 0.11 185)',
+    a4: 'oklch(68% 0.11 300)',
+    a1l: 'oklch(93% 0.07 82)',
+    a2l: 'oklch(93% 0.06 25)',
+    a3l: 'oklch(93% 0.05 185)',
+    a4l: 'oklch(94% 0.05 300)',
+  },
+  violet: {
+    a1: 'oklch(70% 0.14 285)',
+    a2: 'oklch(72% 0.13 340)',
+    a3: 'oklch(68% 0.11 165)',
+    a4: 'oklch(76% 0.14 110)',
+    a1l: 'oklch(93% 0.06 285)',
+    a2l: 'oklch(93% 0.06 340)',
+    a3l: 'oklch(93% 0.05 165)',
+    a4l: 'oklch(93% 0.07 110)',
+  },
+  citrus: {
+    a1: 'oklch(76% 0.16 110)',
+    a2: 'oklch(68% 0.14 50)',
+    a3: 'oklch(65% 0.11 220)',
+    a4: 'oklch(68% 0.11 300)',
+    a1l: 'oklch(93% 0.07 110)',
+    a2l: 'oklch(93% 0.07 50)',
+    a3l: 'oklch(93% 0.05 220)',
+    a4l: 'oklch(94% 0.05 300)',
+  },
+}
+
+export const PROJECTS = [
+  {
+    id: '01', title: 'LabScriptor', tag: 'Industry Client', emoji: '🔬', year: '2026',
+    accent: 0, size: 'large',
+    tagline: 'Hands-free lab sessions, powered by voice.',
+    desc: 'Web-based lab workspace enabling students to complete lab sessions hands-free using real-time voice recognition — spoken words are transcribed, matched against trigger commands, and auto-saved.',
+    longDesc: 'Served as Assistant Team Lead across the full SDLC — technical docs, user testing, stakeholder comms, and CI/CD. Built the full lab management system for lecturers: category and lab creation, bulk enrolment, and a student dashboard. Deployed with GitHub Actions and Playwright E2E tests.',
+    tech: ['React 19', 'Node.js', 'Express 5', 'PostgreSQL', 'Python', 'Flask', 'GitHub Actions'],
+    role: 'Assistant Team Lead (Agile)', duration: 'Industry Client · SP',
+  },
+  {
+    id: '02', title: 'Digital Audio Guide', tag: 'Industry Client', emoji: '🎧', year: '2025',
+    accent: 1, size: 'small',
+    tagline: 'QR, AR, and audio — all in one visit.',
+    desc: 'Full-stack digital audio guide system for an industry client. Visitors browse exhibits, scan QR codes for audio content, and earn badges — admins manage exhibits and AR features.',
+    longDesc: 'Designed role-based auth for Manager and Content Manager roles. Built AR exhibit features with admin toggles and QR scanning for contextual digital pop-ups. Developed a visitor profile page with consent management and a badge showcase. Deployed on Azure.',
+    tech: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Playwright', 'GitHub Actions', 'Azure'],
+    role: 'Industry Client · Project INC', duration: 'SP',
+  },
+  {
+    id: '03', title: 'CINQ', tag: 'Full-stack App', emoji: '🎬', year: '2026',
+    accent: 2, size: 'small',
+    tagline: 'Pick your seat. Book your film.',
+    desc: 'Full-stack cinema booking system with an interactive real-time seat selector, responsive movie listings, and booking management — plus an admin dashboard for movies, halls, and showtimes.',
+    longDesc: 'Implemented auth and RBAC with JWT to cleanly separate customer and admin flows. Built with TanStack Query for server state, Multer for image uploads, and Playwright for E2E testing. Frontend on Vercel, backend on Render.',
+    tech: ['React', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'Prisma ORM', 'JWT', 'Playwright'],
+    role: 'Solo project', duration: 'Personal',
+  },
+  {
+    id: '04', title: 'Wine Fridge Guide', tag: 'Web App', emoji: '🍷', year: '2026',
+    accent: 3, size: 'small',
+    tagline: 'Swipe, sip, sell.',
+    desc: 'Responsive full-stack web app for bar staff to browse an animated fridge, view tasting notes and pitch scripts, and manage a live drink catalog — with JWT-authenticated admin controls.',
+    longDesc: 'Admin controls for drag-to-reorder fridge slots and full CRUD on inventory. Built with Prisma ORM and JWT auth to separate staff and admin flows cleanly. Frontend on Vercel, backend on Render.',
+    tech: ['React 18', 'Vite', 'Tailwind CSS', 'Express', 'Prisma ORM', 'PostgreSQL', 'JWT'],
+    role: 'Solo project', duration: 'Personal',
+  },
+]
+
+export const ALL_SKILLS = [
+  // Languages
+  { name: 'JavaScript', level: 5, cat: 'lang' },
+  { name: 'TypeScript', level: 4, cat: 'lang' },
+  { name: 'Python', level: 4, cat: 'lang' },
+  { name: 'Java', level: 3, cat: 'lang' },
+  { name: 'Swift', level: 3, cat: 'lang' },
+  // Frontend
+  { name: 'React', level: 5, cat: 'front' },
+  { name: 'Tailwind CSS', level: 4, cat: 'front' },
+  { name: 'Vite', level: 4, cat: 'front' },
+  { name: 'TanStack Query', level: 3, cat: 'front' },
+  { name: 'React Router', level: 4, cat: 'front' },
+  // Backend
+  { name: 'Node.js', level: 5, cat: 'back' },
+  { name: 'Express', level: 4, cat: 'back' },
+  { name: 'Flask', level: 3, cat: 'back' },
+  { name: 'Prisma ORM', level: 4, cat: 'back' },
+  { name: 'PostgreSQL', level: 4, cat: 'back' },
+  { name: 'REST APIs', level: 5, cat: 'back' },
+  // Tools
+  { name: 'Playwright', level: 4, cat: 'tools' },
+  { name: 'GitHub Actions', level: 4, cat: 'tools' },
+  { name: 'Git', level: 5, cat: 'tools' },
+  { name: 'Figma', level: 4, cat: 'tools' },
+  { name: 'AWS', level: 3, cat: 'tools' },
+  { name: 'Postman', level: 4, cat: 'tools' },
+  { name: 'Agile / Scrum', level: 4, cat: 'tools' },
+]

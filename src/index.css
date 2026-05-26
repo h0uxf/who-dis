@@ -1,0 +1,82 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: #f7f3ee;
+  color: #1a1614;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* Custom cursor */
+#cursor {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: #1a1614;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.08s, width 0.3s, height 0.3s, background 0.3s;
+  mix-blend-mode: multiply;
+}
+#cursor.hovered {
+  width: 36px;
+  height: 36px;
+  background: oklch(78% 0.15 82);
+  mix-blend-mode: multiply;
+}
+
+/* Cursor blob */
+#cursor-blob {
+  position: fixed;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, oklch(85% 0.10 82 / 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+::selection { background: oklch(85% 0.14 82); }
+
+/* Anchor offset — compensate for 60px sticky nav */
+#work, #about, #skills, #contact { scroll-margin-top: 60px; }
+
+/* Scroll reveal */
+.sr {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1), transform 0.65s cubic-bezier(0.22,1,0.36,1);
+}
+.sr.in { opacity: 1; transform: none; }
+.sr-left  { transform: translateX(-32px); }
+.sr-left.in  { transform: none; }
+.sr-right { transform: translateX(32px); }
+.sr-right.in { transform: none; }
+.sr-scale { transform: scale(0.9); }
+.sr-scale.in { transform: none; }
+
+.d1 { transition-delay: 0.05s !important; }
+.d2 { transition-delay: 0.12s !important; }
+.d3 { transition-delay: 0.20s !important; }
+.d4 { transition-delay: 0.28s !important; }
+.d5 { transition-delay: 0.36s !important; }
+
+@keyframes wiggle    { 0%,100%{transform:rotate(-2deg)} 50%{transform:rotate(3deg)} }
+@keyframes floatY    { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+@keyframes floatYR   { 0%,100%{transform:translateY(0) rotate(0deg)} 50%{transform:translateY(10px) rotate(8deg)} }
+@keyframes spin      { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+@keyframes pulse     { 0%,100%{opacity:0.6;transform:scale(1)} 50%{opacity:1;transform:scale(1.04)} }
+@keyframes marquee   { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+@keyframes bop       { 0%,100%{transform:translateY(0)} 40%{transform:translateY(-6px)} 70%{transform:translateY(2px)} }
+@keyframes takeoverIn  { from{opacity:0;transform:scale(0.97)} to{opacity:1;transform:none} }
+@keyframes takeoverOut { from{opacity:1;transform:none} to{opacity:0;transform:scale(1.03)} }
+@keyframes contentIn   { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:none} }

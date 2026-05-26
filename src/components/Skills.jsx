@@ -14,7 +14,6 @@ function SkillBubble({ sk, c, i }) {
 
   return (
     <span
-      className={`sr d${i % 5 + 1}`}
       data-hover
       style={{
         fontFamily: "'Space Grotesk', sans-serif",
@@ -25,9 +24,10 @@ function SkillBubble({ sk, c, i }) {
         border: `1.5px solid ${h ? col.col : 'rgba(26,22,20,0.10)'}`,
         borderRadius: '100px',
         cursor: 'default',
-        transition: 'all 0.2s',
+        transition: 'background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s',
         transform: h ? `translateY(-3px) rotate(${i % 2 === 0 ? '-2deg' : '2deg'})` : 'none',
         display: 'inline-block',
+        animation: `contentIn 0.4s ${Math.min(i * 0.04, 0.5)}s cubic-bezier(0.22,1,0.36,1) both`,
       }}
       onMouseEnter={() => setH(true)}
       onMouseLeave={() => setH(false)}>
@@ -73,7 +73,7 @@ export default function Skills({ c }) {
 
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', alignItems: 'flex-start' }}>
           {visible.map((sk, i) => (
-            <SkillBubble key={sk.name} sk={sk} c={c} i={i} />
+            <SkillBubble key={`${active}-${sk.name}`} sk={sk} c={c} i={i} />
           ))}
         </div>
       </div>

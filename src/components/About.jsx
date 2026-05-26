@@ -34,7 +34,7 @@ export default function About({ c }) {
             {[
               "I'm a third-year IT student at Singapore Polytechnic on the Project INC pathway — building and shipping full-stack web apps for real industry clients.",
               "I've worked across the full SDLC: database design, REST APIs, React frontends, CI/CD pipelines, and stakeholder comms. I like software that actually solves something.",
-              "When I'm not coding, I'm probably at a hawker centre, picking up a bartending shift, or going down a Wikipedia rabbit hole about something completely unrelated to IT.",
+              "When I’m away from my laptop, I’m probably trying a new food spot, working a shift, or reorganising my life through a Notion page I’ll never open again.",
             ].map((txt, i) => (
               <p key={i} className={`sr sr-left d${i + 2}`} style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '16px', color: 'rgba(247,243,238,0.65)', lineHeight: 1.75, marginBottom: '16px', textWrap: 'pretty' }}>
                 {txt}

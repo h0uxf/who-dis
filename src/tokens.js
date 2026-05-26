@@ -34,7 +34,7 @@ export const MOODS = {
 export const PROJECTS = [
   {
     id: '01', title: 'LabScriptor', tag: 'Industry Client', emoji: '🔬', year: '2026',
-    accent: 0, size: 'large',
+    accent: 0, size: 'large', confidential: true,
     tagline: 'Hands-free lab sessions, powered by voice.',
     desc: 'Web-based lab workspace enabling students to complete lab sessions hands-free using real-time voice recognition — spoken words are transcribed, matched against trigger commands, and auto-saved.',
     longDesc: 'Served as Assistant Team Lead across the full SDLC — technical docs, user testing, stakeholder comms, and CI/CD. Built the full lab management system for lecturers: category and lab creation, bulk enrolment, and a student dashboard. Deployed with GitHub Actions and Playwright E2E tests.',
@@ -43,7 +43,7 @@ export const PROJECTS = [
   },
   {
     id: '02', title: 'Digital Audio Guide', tag: 'Industry Client', emoji: '🎧', year: '2025',
-    accent: 1, size: 'small',
+    accent: 1, size: 'small', confidential: true,
     tagline: 'QR, AR, and audio — all in one visit.',
     desc: 'Full-stack digital audio guide system for an industry client. Visitors browse exhibits, scan QR codes for audio content, and earn badges — admins manage exhibits and AR features.',
     longDesc: 'Designed role-based auth for Manager and Content Manager roles. Built AR exhibit features with admin toggles and QR scanning for contextual digital pop-ups. Developed a visitor profile page with consent management and a badge showcase. Deployed on Azure.',
@@ -61,7 +61,7 @@ export const PROJECTS = [
   },
   {
     id: '04', title: 'Wine Fridge Guide', tag: 'Web App', emoji: '🍷', year: '2026',
-    accent: 3, size: 'small',
+    accent: 3, size: 'small', live: 'https://wine-fridge-guide.vercel.app/', github: 'https://github.com/h0uxf/wine-fridge-guide',
     tagline: 'Swipe, sip, sell.',
     desc: 'Responsive full-stack web app for bar staff to browse an animated fridge, view tasting notes and pitch scripts, and manage a live drink catalog — with JWT-authenticated admin controls.',
     longDesc: 'Admin controls for drag-to-reorder fridge slots and full CRUD on inventory. Built with Prisma ORM and JWT auth to separate staff and admin flows cleanly. Frontend on Vercel, backend on Render.',

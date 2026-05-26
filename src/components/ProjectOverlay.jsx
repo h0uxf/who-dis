@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react'
+import ConfidentialModal from './ConfidentialModal.jsx'
 
 export default function ProjectOverlay({ p, c, onClose }) {
   const [closing, setClosing] = useState(false)
+  const [showConfidential, setShowConfidential] = useState(false)
   const accents = [
     { bg: c.a1l, col: c.a1 },
     { bg: c.a2l, col: c.a2 },
     { bg: c.a3l, col: c.a3 },
     { bg: c.a4l, col: c.a4 },
   ]
-  const ac = accents[p.accent % 3]
+  const ac = accents[p.accent % accents.length]
 
   const handleClose = () => {
     setClosing(true)
@@ -22,6 +24,8 @@ export default function ProjectOverlay({ p, c, onClose }) {
   }, [])
 
   return (
+    <>
+    {showConfidential && <ConfidentialModal project={p} accentCol={ac.col} accentBg={ac.bg} onClose={() => setShowConfidential(false)} />}
     <div style={{
       position: 'fixed', inset: 0, zIndex: 200,
       background: ac.bg,
@@ -111,31 +115,60 @@ export default function ProjectOverlay({ p, c, onClose }) {
           </div>
 
           <div style={{ display: 'flex', gap: '12px' }}>
-            <a href="#" data-hover style={{
-              flex: 1, textAlign: 'center', padding: '14px 20px',
-              background: '#1a1614', color: '#f7f3ee',
-              fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: '14px',
-              borderRadius: '12px', textDecoration: 'none', letterSpacing: '-0.01em',
-              transition: 'background 0.2s, transform 0.15s', display: 'block',
-            }}
-            onMouseEnter={(e) => { e.currentTarget.style.background = ac.col; e.currentTarget.style.transform = 'translateY(-2px)' }}
-            onMouseLeave={(e) => { e.currentTarget.style.background = '#1a1614'; e.currentTarget.style.transform = 'none' }}>
-              View live →
-            </a>
-            <a href="#" data-hover style={{
-              flex: 1, textAlign: 'center', padding: '14px 20px',
-              background: 'rgba(26,22,20,0.08)', color: '#1a1614',
-              fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: '14px',
-              borderRadius: '12px', textDecoration: 'none',
-              transition: 'background 0.2s, transform 0.15s', display: 'block',
-            }}
-            onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(26,22,20,0.14)'; e.currentTarget.style.transform = 'translateY(-2px)' }}
-            onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(26,22,20,0.08)'; e.currentTarget.style.transform = 'none' }}>
-              GitHub ↗
-            </a>
+            {p.confidential ? (
+              <button onClick={() => setShowConfidential(true)} data-hover style={{
+                flex: 1, textAlign: 'center', padding: '14px 20px',
+                background: '#1a1614', color: '#f7f3ee',
+                fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: '14px',
+                borderRadius: '12px', border: 'none', cursor: 'pointer', letterSpacing: '-0.01em',
+                transition: 'background 0.2s, transform 0.15s',
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.background = ac.col; e.currentTarget.style.transform = 'translateY(-2px)' }}
+              onMouseLeave={(e) => { e.currentTarget.style.background = '#1a1614'; e.currentTarget.style.transform = 'none' }}>
+                View live →
+              </button>
+            ) : (
+              <a href={p.live || '#'} target="_blank" rel="noopener noreferrer" data-hover style={{
+                flex: 1, textAlign: 'center', padding: '14px 20px',
+                background: '#1a1614', color: '#f7f3ee',
+                fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: '14px',
+                borderRadius: '12px', textDecoration: 'none', letterSpacing: '-0.01em',
+                transition: 'background 0.2s, transform 0.15s', display: 'block',
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.background = ac.col; e.currentTarget.style.transform = 'translateY(-2px)' }}
+              onMouseLeave={(e) => { e.currentTarget.style.background = '#1a1614'; e.currentTarget.style.transform = 'none' }}>
+                View live →
+              </a>
+            )}
+            {p.confidential ? (
+              <button onClick={() => setShowConfidential(true)} data-hover style={{
+                flex: 1, textAlign: 'center', padding: '14px 20px',
+                background: 'rgba(26,22,20,0.08)', color: '#1a1614',
+                fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: '14px',
+                borderRadius: '12px', border: 'none', cursor: 'pointer',
+                transition: 'background 0.2s, transform 0.15s',
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(26,22,20,0.14)'; e.currentTarget.style.transform = 'translateY(-2px)' }}
+              onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(26,22,20,0.08)'; e.currentTarget.style.transform = 'none' }}>
+                GitHub ↗
+              </button>
+            ) : (
+              <a href={p.github || '#'} target="_blank" rel="noopener noreferrer" data-hover style={{
+                flex: 1, textAlign: 'center', padding: '14px 20px',
+                background: 'rgba(26,22,20,0.08)', color: '#1a1614',
+                fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: '14px',
+                borderRadius: '12px', textDecoration: 'none',
+                transition: 'background 0.2s, transform 0.15s', display: 'block',
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(26,22,20,0.14)'; e.currentTarget.style.transform = 'translateY(-2px)' }}
+              onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(26,22,20,0.08)'; e.currentTarget.style.transform = 'none' }}>
+                GitHub ↗
+              </a>
+            )}
           </div>
         </div>
       </div>
     </div>
+    </>
   )
 }

@@ -39,8 +39,8 @@ function SkillBubble({ sk, c, i }) {
 
 export default function Skills({ c }) {
   const [active, setActive] = useState('all')
-  const filters = ['all', 'lang', 'front', 'back', 'tools', 'creative']
-  const labels = { all: 'All', lang: 'Languages', front: 'Frontend', back: 'Backend', tools: 'Tools', creative: 'Creative' }
+  const filters = ['all', 'lang', 'front', 'back', 'tools']
+  const labels = { all: 'All', lang: 'Languages', front: 'Frontend', back: 'Backend', tools: 'Tools' }
   const visible = active === 'all' ? ALL_SKILLS : ALL_SKILLS.filter((s) => s.cat === active)
 
   return (

@@ -17,30 +17,30 @@ export default function Hero({ c }) {
   return (
     <section id="hero" style={{
       minHeight: '100vh',
-      padding: '80px clamp(20px, 6vw, 80px) 60px',
+      padding: '80px clamp(16px, 6vw, 80px) 60px',
       display: 'flex', flexDirection: 'column',
       justifyContent: 'center',
       position: 'relative', overflow: 'hidden',
     }}>
       {/* Floating blobs */}
-      <div style={{
+      <div className="hero-blob" style={{
         position: 'absolute', top: '12%', right: '8%', width: 180, height: 180,
         background: c.a1l, borderRadius: '60% 40% 55% 45% / 50% 60% 40% 55%',
         animation: 'floatY 5s ease-in-out infinite', zIndex: 0,
       }} />
-      <div style={{
+      <div className="hero-blob" style={{
         position: 'absolute', bottom: '18%', right: '18%', width: 110, height: 110,
         background: c.a2l, borderRadius: '45% 55% 40% 60% / 60% 45% 55% 40%',
         animation: 'floatYR 6s ease-in-out 1s infinite', zIndex: 0,
       }} />
-      <div style={{
+      <div className="hero-blob" style={{
         position: 'absolute', top: '30%', left: '2%', width: 70, height: 70,
         background: c.a3l, borderRadius: '50%',
         animation: 'floatY 4s ease-in-out 0.5s infinite', zIndex: 0,
       }} />
 
       {/* Spinning ring */}
-      <div style={{
+      <div className="hero-blob" style={{
         position: 'absolute', top: '10%', right: '5%', width: 220, height: 220,
         border: `2px dashed ${c.a1}44`, borderRadius: '50%',
         animation: 'spin 24s linear infinite', zIndex: 0,
@@ -173,6 +173,12 @@ export default function Hero({ c }) {
           ))}
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 640px) {
+          .hero-blob { display: none !important; }
+        }
+      `}</style>
     </section>
   )
 }

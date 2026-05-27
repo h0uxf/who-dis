@@ -110,7 +110,7 @@ export default function Contact({ c }) {
         </div>
 
         {/* Chat window */}
-        <div className="sr d1" style={{
+        <div className="sr d1 contact-chat" style={{
           background: '#fff',
           borderRadius: '24px',
           border: '1.5px solid rgba(26,22,20,0.08)',
@@ -141,7 +141,7 @@ export default function Contact({ c }) {
           </div>
 
           {/* Messages */}
-          <div ref={bottomRef} style={{
+          <div ref={bottomRef} className="contact-messages" style={{
             height: '280px', overflowY: 'auto',
             padding: '20px 16px', display: 'flex', flexDirection: 'column', gap: '10px',
           }}>
@@ -281,7 +281,7 @@ export default function Contact({ c }) {
         </div>
 
         {/* Social links */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '28px', marginTop: '32px' }}>
+        <div className="contact-socials" style={{ display: 'flex', justifyContent: 'center', gap: '28px', marginTop: '32px' }}>
           {[
             { label: 'GitHub', href: 'https://github.com/h0uxf' },
             { label: 'LinkedIn', href: 'https://linkedin.com/in/pyaepyaemoe' },
@@ -301,6 +301,17 @@ export default function Contact({ c }) {
           ))}
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .contact-chat { border-radius: 16px; }
+          .contact-messages { height: 240px !important; }
+        }
+        @media (max-width: 640px) {
+          .contact-messages { height: 200px !important; }
+          .contact-socials { flex-wrap: wrap; gap: 16px !important; }
+        }
+      `}</style>
     </section>
   )
 }

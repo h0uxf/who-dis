@@ -7,13 +7,13 @@ export default function About({ c }) {
       position: 'relative', overflow: 'hidden',
     }}>
       {/* Decorative circles */}
-      <div style={{
+      <div className="about-deco" style={{
         position: 'absolute', right: '-80px', top: '50%', transform: 'translateY(-50%)',
         width: 400, height: 400,
         border: `2px solid ${c.a1}30`,
         borderRadius: '50%',
       }} />
-      <div style={{
+      <div className="about-deco" style={{
         position: 'absolute', right: '-40px', top: '50%', transform: 'translateY(-50%)',
         width: 280, height: 280,
         background: `${c.a1}15`,
@@ -21,7 +21,7 @@ export default function About({ c }) {
       }} />
 
       <div style={{ maxWidth: '1060px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'start' }}>
+        <div className="about-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'start' }}>
 
           {/* Left */}
           <div>
@@ -124,6 +124,16 @@ export default function About({ c }) {
           </div>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .about-grid { grid-template-columns: 1fr !important; gap: 60px !important; }
+        }
+        @media (max-width: 640px) {
+          .about-deco { display: none !important; }
+          .about-grid { gap: 40px !important; }
+        }
+      `}</style>
     </section>
   )
 }

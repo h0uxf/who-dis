@@ -46,7 +46,7 @@ export default function Projects({ c }) {
           </div>
 
           {/* Player layout */}
-          <div className="sr d2" style={{
+          <div className="sr d2 project-player" style={{
             display: 'grid', gridTemplateColumns: '1fr 1.4fr',
             gap: '0', borderRadius: '24px',
             border: '1.5px solid rgba(26,22,20,0.08)',
@@ -56,7 +56,7 @@ export default function Projects({ c }) {
           }}>
 
             {/* LEFT — Playlist */}
-            <div style={{ borderRight: '1px solid rgba(26,22,20,0.07)', background: 'oklch(97.5% 0.010 75)' }}>
+            <div className="project-playlist" style={{ borderRight: '1px solid rgba(26,22,20,0.07)', background: 'oklch(97.5% 0.010 75)' }}>
               <div style={{ padding: '20px 24px 14px', borderBottom: '1px solid rgba(26,22,20,0.06)' }}>
                 <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '10px', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(26,22,20,0.35)' }}>Playlist · {PROJECTS.length} projects</p>
               </div>
@@ -121,7 +121,7 @@ export default function Projects({ c }) {
             </div>
 
             {/* RIGHT — Now Playing */}
-            <div style={{ padding: '32px 32px 28px', display: 'flex', flexDirection: 'column' }}>
+            <div className="project-player-right" style={{ padding: '32px 32px 28px', display: 'flex', flexDirection: 'column' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '22px' }}>
                 <div style={{ width: 6, height: 6, borderRadius: '50%', background: ac.col, animation: 'pulse 1.5s ease-in-out infinite' }} />
                 <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '10px', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(26,22,20,0.35)' }}>Now playing</p>
@@ -131,6 +131,7 @@ export default function Projects({ c }) {
               <div
                 onClick={() => setOverlay(p)}
                 data-hover
+                className="project-preview"
                 style={{
                   height: '180px', borderRadius: '16px',
                   background: `linear-gradient(135deg, ${ac.bg}, oklch(96% 0.01 75))`,
@@ -232,6 +233,15 @@ export default function Projects({ c }) {
             </div>
           </div>
         </div>
+
+        <style>{`
+          @media (max-width: 640px) {
+            .project-player { grid-template-columns: 1fr !important; }
+            .project-playlist { border-right: none !important; border-bottom: 1px solid rgba(26,22,20,0.07) !important; padding-bottom: 0 !important; }
+            .project-player-right { padding: 24px 20px 20px !important; }
+            .project-preview { height: 140px !important; }
+          }
+        `}</style>
       </section>
     </>
   )

@@ -46,7 +46,7 @@ export default function Skills({ c }) {
   return (
     <section id="skills" style={{ padding: '100px clamp(20px, 6vw, 80px)' }}>
       <div style={{ maxWidth: '1060px', margin: '0 auto' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '40px', flexWrap: 'wrap', gap: '16px' }}>
+        <div className="skills-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '40px', flexWrap: 'wrap', gap: '16px' }}>
           <div>
             <p className="sr" style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '11px', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: c.a3, marginBottom: '8px' }}>Skills</p>
             <h2 className="sr d1" style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 'clamp(32px, 4.5vw, 58px)', fontWeight: 700, letterSpacing: '-0.04em', color: '#1a1614', lineHeight: 1 }}>
@@ -77,6 +77,12 @@ export default function Skills({ c }) {
           ))}
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 640px) {
+          .skills-header { flex-direction: column; align-items: flex-start !important; }
+        }
+      `}</style>
     </section>
   )
 }

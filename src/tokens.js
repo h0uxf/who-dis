@@ -55,8 +55,8 @@ export const PROJECTS = [
     accent: 2, size: 'small', live: 'https://cinq-one.vercel.app/', github: 'https://github.com/h0uxf/CINQ',
     tagline: 'Pick your seat. Book your film.',
     desc: 'Full-stack cinema booking system with an interactive real-time seat selector, responsive movie listings, and booking management — plus an admin dashboard for movies, halls, and showtimes.',
-    longDesc: 'Implemented auth and RBAC with JWT to cleanly separate customer and admin flows. Built with TanStack Query for server state, Multer for image uploads, and Playwright for E2E testing. Frontend on Vercel, backend on Render.',
-    tech: ['React', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'Prisma ORM', 'JWT', 'Playwright'],
+    longDesc: 'Implemented auth and RBAC with JWT to separate customer and admin flows. Real-time seat holds via WebSocket — seats lock on selection and release on timeout or cancel. Built with TanStack Query v5 for server state and Brevo for transactional booking emails. Frontend on Vercel, backend on Render.',
+    tech: ['React 18', 'TypeScript', 'Vite', 'React Router', 'TanStack Query', 'Node.js', 'Express 5', 'Prisma ORM', 'PostgreSQL', 'WebSockets', 'JWT', 'Brevo'],
     role: 'Solo project', duration: 'Personal',
   },
   {
@@ -90,6 +90,7 @@ export const ALL_SKILLS = [
   { name: 'Prisma ORM', level: 4, cat: 'back' },
   { name: 'PostgreSQL', level: 4, cat: 'back' },
   { name: 'REST APIs', level: 5, cat: 'back' },
+  { name: 'WebSockets', level: 3, cat: 'back' },
   // Tools
   { name: 'Playwright', level: 4, cat: 'tools' },
   { name: 'GitHub Actions', level: 4, cat: 'tools' },

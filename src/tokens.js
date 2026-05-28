@@ -52,7 +52,7 @@ export const PROJECTS = [
   },
   {
     id: '03', title: 'CINQ', tag: 'Full-stack App', emoji: '🎬', year: '2026',
-    accent: 2, size: 'small',
+    accent: 2, size: 'small', live: 'https://cinq-one.vercel.app/', github: 'https://github.com/h0uxf/CINQ',
     tagline: 'Pick your seat. Book your film.',
     desc: 'Full-stack cinema booking system with an interactive real-time seat selector, responsive movie listings, and booking management — plus an admin dashboard for movies, halls, and showtimes.',
     longDesc: 'Implemented auth and RBAC with JWT to cleanly separate customer and admin flows. Built with TanStack Query for server state, Multer for image uploads, and Playwright for E2E testing. Frontend on Vercel, backend on Render.',
